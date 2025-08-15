@@ -1,1 +1,33 @@
-<content as in document above>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SababaJobs.co.il - Resume Submission</title>
+</head>
+<body>
+<h1>Submit Your Application - SababaJobs.co.il (Demo)</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>{% for msg in messages %}<li>{{ msg }}</li>{% endfor %}</ul>
+  {% endif %}
+{% endwith %}
+
+<form action="/apply" method="post" enctype="multipart/form-data">
+  <label>Full Name: <input type="text" name="name"></label><br>
+  <label>Email: <input type="email" name="email"></label><br>
+  <label>Phone: <input type="text" name="phone"></label><br>
+  <label>Position:
+    <select name="position">
+      {% for p in positions %}
+        <option value="{{ p }}">{{ p }}</option>
+      {% endfor %}
+    </select>
+  </label><br>
+  <label>Resume: <input type="file" name="resume" accept=".pdf,.doc,.docx"></label><br>
+  <label>I confirm the information is correct <input type="checkbox" name="accept" value="1"></label><br>
+  <button type="submit">Submit Application</button>
+</form>
+</body>
+</html>

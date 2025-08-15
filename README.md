@@ -24,3 +24,9 @@ App runs at http://127.0.0.1:5000
 ## Tips
 - webdriver-manager avoids manual driver setup.
 - CI uses selenium/standalone-chrome service.
+
+## Enhancements
+- Database integration for storing applicants.
+- Automatic resume parsing (pdfminer / python-docx).
+- Additional UI and accessibility tests.
+- Admin dashboard to view submissions.

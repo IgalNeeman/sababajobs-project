@@ -1,0 +1,5 @@
+Flask>=2.0
+pytest
+selenium
+webdriver-manager
+werkzeug
